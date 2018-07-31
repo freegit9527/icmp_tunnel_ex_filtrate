@@ -1,12 +1,14 @@
 #encoding=utf-8
 
 import re 
-import os 
 import sys
+import base64  
+import StringIO 
 
 file=sys.argv[1]
 f = open(file, "r")
-f1 = open('test.txt', 'w+')
+f1 = open('test.txt', 'w')
+f2 = open('result.txt', 'w')
 pattern = re.compile(r'(?<=\$\$START\$\$).*')  
 m=''
 n=''
@@ -18,5 +20,6 @@ for line in f:
 		if m[0] != n:
 			f1.write(str(m[0])+'\n')
 			n = m[0]
-
-os.system('base64 -d  test.txt >> result.txt')
+f1.close()
+f1 = open('test.txt', 'r')
+base64.decode(f1, f2) 
