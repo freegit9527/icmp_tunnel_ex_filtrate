@@ -17,5 +17,5 @@ tcpdump -i  eth0  host xx.xx.xx.xx  and icmp and icmp[icmptype]=icmp-echo -XX -v
 
 Use icmptofile.py to decode the base64 data to respective format
 
-```python icmptofile.py output,txt"```
+```python icmptofile.py output.txt"```
 
