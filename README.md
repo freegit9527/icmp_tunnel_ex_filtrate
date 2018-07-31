@@ -11,6 +11,7 @@ at the server end:
 run tcpdump. Use the following command :
 
 ```sudo tcpdump -i eth0 icmp and icmp[icmptype]=icmp-echo -XX -vvv -w output.txt```
+tcpdump -i  eth0  host xx.xx.xx.xx  and icmp and icmp[icmptype]=icmp-echo -XX -vvv -w  output.txt
 
 Use icmptofile.py to decode the base64 data to respective format
 
